@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"
+      
+</head>
+<body>
+    <header>
+        <h1>Welcome to Eco-Friendly Products</h1>
+        <p>Your one-stop shop for sustainable living!</p>
+        <a href="#products" class="cta-button">Shop Now</a>
+    </header>
+    
+    <section id="products">
+        <h2>Our Products</h2>
+        
+        <div class="product">
+            <img src="1.jpg" alt="Bamboo Toothbrush">
+            <h3>Bamboo Toothbrush</h3>
+            <p>Make the switch to bamboo and help reduce plastic waste.</p>
+            <button class="info-button">More Info</button>
+            <p class="more-info" style="display: none;">Bamboo toothbrushes are biodegradable and come in eco-friendly packaging!</p>
+        </div>
+        
+        <div class="product">
+            <img src="2.jpg" alt="Reusable Straw Set">
+            <h3>Reusable Straw Set</h3>
+            <p>Sip sustainably with our stainless steel straws.</p>
+            <button class="info-button">More Info</button>
+            <p class="more-info" style="display: none;">These straws are perfect for cold or hot beverages and come with a cleaning brush.</p>
+        </div>
+        
+        <div class="product">
+            <img src="3.jpg" alt="Eco-Friendly Tote Bag">
+            <h3>Eco-Friendly Tote Bag</h3>
+            <p>Reduce plastic use with our stylish tote bags.</p>
+            <button class="info-button">More Info</button>
+            <p class="more-info" style="display: none;">Made from recycled materials, these bags are perfect for shopping or daily use.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Eco-Friendly Products. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Select all info buttons
+        const infoButtons = document.querySelectorAll('.info-button');
+
+        // Add click event listener to each button
+        infoButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const moreInfo = this.nextElementSibling; // Select the next sibling <p> with class 'more-info'
+                
+                // Toggle the display of the more info paragraph
+                if (moreInfo.style.display === "none" || moreInfo.style.display === "") {
+                    moreInfo.style.display = "block"; // Show more info
+                    this.textContent = "Less Info"; // Change button text
+                } else {
+                    moreInfo.style.display = "none"; // Hide more info
+                    this.textContent = "More Info"; // Change button text back
+                }
+            });
+        });
+    </script>
+</body>
+</html>
